@@ -1,5 +1,10 @@
-# Capstone-Project
- Pembuatan website GreenTechify untuk project capstone team 
+# GreenTechify Apps
+
+ 
+<p align="middle"><img src="https://i.ibb.co/bvV8cD2/Logo.png" alt="Logo" border="0"/></p>
+ 
+ <p align="center">Pembuatan Website GreenTechify untuk Project Capstone Dicoding </p><br>
+ <p>Sebuah aplikasi yang memberikan informasi mengenai pentingnya pemanfaatan hutan dan menggabungkan teknologi untuk dunia yang lebih hijau.</p>
  
 Team ID : C23-R4102
 <br> Nama Anggota :
