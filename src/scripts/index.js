@@ -34,6 +34,12 @@ function loadMapScenario() {
     title: "Rumah Nizam",
   });
   map.entities.push(pin);
+
+  var pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-6.17511, 106.865036), {
+    title: "JAkarta",
+  });
+
+  map.entities.push(pin);
 }
 
 // Bagian Kalkulator
