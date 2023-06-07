@@ -19,37 +19,43 @@
 body {
   font-family: "Nunito", sans-serif;
   background-color: #fff;
-  min-height: 2000px;
+  min-height: 100%;
+  max-width: 100%;
   scroll-behavior: smooth;
 }
 
 /* Navbar */
-
-.navbar {
+nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 2rem 8%;
+  justify-content: space-between;
+  padding: 0 16px;
+  margin: auto;
+  position: fixed;
   background-color: #fff;
   border-bottom: 1px solid var(--buton);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
+  height: 60px;
   z-index: 9999;
 }
 
 .navbar .logo {
-  width: 90px;
+  width: 100px;
   height: 30px;
+}
+
+.navbar .logo a {
+  transition: opacity 0.5s;
+  padding: 15px;
 }
 
 .navbar .navbar-nav a {
   color: var(--font);
   display: inline-block;
   font-size: 1.5rem;
-  margin: 0 1rem;
+  padding: 12px;
   scroll-behavior: smooth;
+  text-decoration: none;
 }
 
 .navbar .navbar-nav a:hover {
@@ -75,7 +81,7 @@ body {
 }
 
 .navbar .navbar-extra a:hover {
-  color: var(--font);
+  color: var(--primary);
 }
 
 #hamburger-menu {
@@ -85,40 +91,31 @@ body {
 /* Hero Section */
 .hero {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   min-height: 600px;
-  width: 100% 0;
-  /* background-image: url("/src/public/image/Home-page.png"); */
+  width: 100%;
   background-position: center;
   object-fit: cover;
-  padding: 100px;
 }
 
-/* .hero::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(0deg, rgba(194, 190, 190, 190) 3%, rgba(247, 241, 241, 0) 25%);
-} */
-
-.hero .hero-content {
-  padding: 6rem 0.1%;
-  max-width: 60rem;
+.hero-content {
+  max-width: 100%;
+  align-items: center;
 }
 
-.hero .hero-content h1 {
+.hero-content h1 {
   font-size: 3em;
   line-height: 1;
   text-shadow: 1px 1px 3px rgba(245, 245, 245, 0.5);
 }
 
-.hero .hero-content h1 span {
+.hero-content h1 span {
   color: var(--buton);
 }
 
-.hero .hero-content p {
+.hero-content p {
   font-size: 1.6rem;
   margin-top: 1rem;
   line-height: 1.5;
@@ -126,7 +123,7 @@ body {
   text-shadow: 1px 1px 3px rgba(245, 245, 245, 0.5);
 }
 
-.hero .hero-content .btn {
+.hero-content .btn {
   margin-top: 2rem;
   display: inline-block;
   padding: 0.6rem 1.5rem;
@@ -137,62 +134,69 @@ body {
   box-shadow: 1px 1px 3px rgba(245, 245, 245, 0.5);
 }
 
-.hero .hero-content .btn:hover {
+.hero-content .btn:hover {
   background-color: var(--primary);
 }
 
 .images-1 {
-  width: 40%;
-  height: 50%;
-  position: absolute;
-  bottom: 250px;
-  right: 70px;
+  max-width: 100%;
+  height: auto;
+  z-index: 99;
 }
 
 /* Content Section */
 .content {
-  position: center;
-  border-radius: 1rem;
-  border-width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   padding: 10px;
   margin: 100px;
   background-color: var(--calc);
+  border-radius: 10px;
 }
 
-.content h2 {
+.text-content {
+  padding: 0 20px;
+  border-radius: 20px;
+}
+
+.text-content h2 {
   font-size: 3rem;
   color: var(--font);
   margin: 2rem;
 }
 
-.content p {
+.text-content p {
   font-size: 2rem;
   color: var(--font);
-  text-align: left;
+  text-align: justify;
   margin: 3rem;
 }
 
 .images-2 {
-  height: 30rem;
-  position: absolute;
-  right: 3rem;
-  margin-top: -40rem;
-  z-index: 0;
+  display: flex;
+  justify-content: flex-end;
 }
+
+.images-2 img {
+  width: 30rem;
+  height: auto;
+}
+
 /* Bagian Maps */
 .maps {
   text-align: center;
-  padding: 50px;
 }
 
 .maps h1 {
   font-size: 3em;
-  margin-bottom: 20px;
+  margin: 3rem;
 }
 
 .map {
-  width: 100%;
-  height: 400px;
+  width: 80%;
+  height: 600px;
   margin: 0 auto;
   border: 4px solid #f0f0f0;
   border-radius: 10px;
@@ -368,43 +372,48 @@ button:hover {
 
 /* Footer Section */
 .footer {
-  display: flex;
-  justify-content: center;
   width: 100%;
-  height: 400px;
   background-color: #fff;
+  border: 12px var(--font);
   color: var(--Strong);
-  border: 1px 1px 3px rgba(245, 245, 245, 0.5) !;
 }
 
 .footer-content {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
+  margin: 0;
+  background-color: #d1d6d2cc;
 }
 
 .footer-section {
-  flex: 1;
+  flex: 3;
+  padding: 20px;
 }
 
 .footer-section h4 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 1.5rem;
 }
 
 .footer-section p {
   color: var(--font);
+  font-size: 1.2rem;
+  margin: 10px;
 }
 
 .footer-section ul {
   list-style: none;
-  padding: 0;
+  padding: 12px;
   margin: 0;
 }
 
 .footer-section ul li {
-  margin-bottom: 10px;
+  color: var(--font);
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 15px;
 }
 
 .footer-section ul li a {
@@ -418,17 +427,54 @@ button:hover {
 }
 
 .logo-social h4 {
-  font-size: 16px;
+  font-size: 1.5rem;
+  margin: 12px;
 }
 
 .logo {
-  width: 100px;
-  margin-right: 10px;
+  width: 200px;
+  margin: 15px 0;
 }
 
 .social-media a {
   color: var(--font);
   margin-right: 10px;
+}
+
+.fab {
+  font-weight: 600;
+  font-size: 2.3rem;
+  padding: 12px;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  max-width: 100%;
+  margin: 0;
+  bottom: 0;
+  background-color: #333;
+}
+
+.copyright p {
+  display: flex;
+  font-size: 16px;
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  text-align: center;
+  align-items: center;
+  height: 50px;
+}
+
+.copyright a {
+  text-decoration: none;
+  padding: 15px;
+  color: #e4e4e4;
+}
+
+.copyright a:hover {
+  color: #33ee22;
 }
 
 /* Media Queris */
@@ -454,9 +500,9 @@ button:hover {
     position: absolute;
     top: 100%;
     right: -100%;
-    background-color: rgba(245, 245, 245, 0.5);
-    width: 30rem;
-    height: 100vh;
+    background-color: #ffffff;
+    width: 40%;
+    height: 200vh;
     transition: 0.3s;
   }
 
@@ -482,29 +528,26 @@ button:hover {
   /* Hero Section */
   .hero {
     display: flex;
+    align-items: center;
     flex-direction: column;
-    min-height: 600px;
-    padding: 100px;
   }
 
-  .hero .hero-content {
-    padding: 6rem 2%;
-    max-width: 60rem;
+  .hero-content {
     margin: 0 auto;
     text-align: center;
   }
 
-  .hero .hero-content h1 {
+  .hero-content h1 {
     font-size: 3em;
     line-height: 1;
     text-shadow: 1px 1px 3px rgba(245, 245, 245, 0.5);
   }
 
-  .hero .hero-content h1 span {
+  .hero-content h1 span {
     color: var(--buton);
   }
 
-  .hero .hero-content p {
+  .hero-content p {
     font-size: 1.6rem;
     margin-top: 1rem;
     line-height: 1.5;
@@ -512,7 +555,7 @@ button:hover {
     text-shadow: 1px 1px 3px rgba(245, 245, 245, 0.5);
   }
 
-  .hero .hero-content .btn {
+  .hero-content .btn {
     margin-top: 2rem;
     display: inline-block;
     padding: 0.6rem 1.5rem;
@@ -523,17 +566,20 @@ button:hover {
     box-shadow: 1px 1px 3px rgba(245, 245, 245, 0.5);
   }
 
-  .hero .hero-content .btn:hover {
+  .hero-content .btn:hover {
     background-color: #132f3a;
   }
 
   .images-1 {
-    width: 40%;
-    max-width: 300px;
-    height: auto;
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    max-width: 100%;
+    margin: 20px;
+  }
+
+  .lead1 {
+    width: 50%;
   }
 
   .hero {
@@ -541,22 +587,42 @@ button:hover {
     padding: 50px 20px;
   }
 
-  .hero .hero-content {
+  .hero-content {
     padding: 4rem 0;
   }
 
-  .hero .hero-content h1 {
+  .hero-content h1 {
     font-size: 2.5em;
   }
 
-  .hero .hero-content p {
+  .hero-content p {
     font-size: 1.4rem;
   }
 
-  .images-1 {
+  /* Content Section */
+  .content {
+    flex-direction: column;
+    margin: 10% 10% 20% 10%;
+    height: auto;
+  }
+
+  .images-2 {
+    justify-content: center;
+  }
+
+  .images-2 img {
     width: 50%;
-    max-width: 250px;
-    position: static;
+  }
+
+  /* Kalkulator Section */
+  .calculators {
+    display: flex;
+    justify-content: center;
+    padding: 10%;
+    margin: 10%;
+  }
+  .clc img {
+    right: 7rem;
   }
 }
 
@@ -565,11 +631,14 @@ button:hover {
   html {
     font-size: 55%;
   }
+
   /* Hero Section */
   .hero {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     min-height: 600px;
+    width: 100%;
     padding: 100px;
   }
 
@@ -613,15 +682,6 @@ button:hover {
     background-color: #132f3a;
   }
 
-  .images-1 {
-    width: 40%;
-    max-width: 300px;
-    height: auto;
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
-  }
-
   .hero {
     min-height: auto;
     padding: 50px 20px;
@@ -640,8 +700,54 @@ button:hover {
   }
 
   .images-1 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    max-width: 100%;
+    margin: 10px;
+  }
+
+  .lead1 {
     width: 50%;
-    max-width: 250px;
-    position: static;
+  }
+
+  /* Content Section */
+  .content {
+    flex-direction: column;
+  }
+
+  .images-2 {
+    justify-content: center;
+  }
+
+  .images-2 img {
+    max-width: 50%;
+  }
+
+  /* Kalkulator Section */
+  .calculators {
+    margin: 10px;
+  }
+  .clc img {
+    right: 10rem;
+  }
+
+  /* Footer Section */
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section ul li {
+    font-size: 1.2rem;
+    margin: 5px;
+  }
+
+  .footer-section ul {
+    padding: 10px;
+  }
+
+  .logo-social {
+    margin-bottom: 25px;
   }
 }
