@@ -1,0 +1,72 @@
+/* Kalkulator Karbon */
+.calculators {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  margin: 10rem;
+  margin-bottom: 50px;
+}
+
+.calculators h1 {
+  font-size: 3em;
+  line-height: 1;
+  text-shadow: 1px 1px 3px rgba(245, 245, 245, 0.5);
+  padding-bottom: 50px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: var(--font);
+}
+
+label img {
+  height: 4rem;
+}
+
+input[type="number"] {
+  width: 250px;
+  padding: 6px;
+  margin-bottom: 5rem;
+  border-radius: 2px;
+  font-size: 18px;
+  color: var(--font);
+  background-color: var(--calc);
+  /* border: 2px solid var(--font); */
+}
+
+button {
+  background-color: var(--primary);
+  border: 2px solid var(--primary);
+  color: var(--font);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: var(--buton);
+}
+
+.clc img {
+  height: 30rem;
+  position: absolute;
+  right: 15rem;
+  margin-top: -1rem;
+  z-index: -1;
+}
+
+#result {
+  background-color: #fff;
+  margin-top: 1px;
+  font-size: 18px;
+  color: var(--font);
+  border: 2px dashed var(--font);
+  width: 100%;
+  margin-left: 0;
+}
