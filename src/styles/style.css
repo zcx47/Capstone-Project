@@ -258,7 +258,6 @@ nav {
 
 .footer-section ul {
   list-style: none;
-  padding: 12px;
   margin: 0;
 }
 
@@ -272,6 +271,14 @@ nav {
 .footer-section ul li a {
   color: var(--font);
   text-decoration: none;
+  text-align: center;
+}
+
+.footer-section a {
+  padding: 15px;
+}
+.footer-section a:hover {
+  color: #33ee22;
 }
 
 .logo-social {
@@ -291,7 +298,6 @@ nav {
 
 .social-media a {
   color: var(--font);
-  margin-right: 10px;
 }
 
 .fab {
