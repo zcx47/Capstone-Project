@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="./src/public/icon.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Nunito:wght@300;500&family=Podkova:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet" />
+
+    <title>Pelaporan Daerah Penghijauan</title>
+    <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?key=Avnu0ji1_4GO78QnO-6TuZN_vuDCUYQtyqL1QgA3hROdiQGbUn514KyTM0b5ESeb&callback=loadMapScenario" async defer></script>
+
+    <link rel="stylesheet" href="/src/styles/form-pelaporan.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Pelaporan Daerah Penghijauan</h2>
+      <form id="reportForm" onsubmit="submitForm(event)">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+
+        <label for="area">Daerah yang Dilaporkan:</label>
+        <textarea id="area" required></textarea>
+
+        <label for="location">Lokasi:</label>
+        <div id="map"></div>
+
+        <input type="hidden" id="latitude" />
+        <input type="hidden" id="longitude" />
+
+        <input type="submit" value="Kirim Laporan" />
+      </form>
+
+      <div id="loading">
+        <img src="loading.gif" alt="Loading" />
+        <p>Sedang mengirim laporan...</p>
+      </div>
+
+      <div id="notification" class="notification"></div>
+    </div>
+  </body>
+  <script src="/src/scripts/form-pelaporan.js"></script>
+</html>
