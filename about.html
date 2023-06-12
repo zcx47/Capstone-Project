@@ -12,26 +12,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Nunito:wght@300;500&family=Podkova:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet" />
+  <link rel="scripts" href="./src/scripts/index.js"/>
 
   <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?key=Avnu0ji1_4GO78QnO-6TuZN_vuDCUYQtyqL1QgA3hROdiQGbUn514KyTM0b5ESeb"></script>
 
   <script src="https://unpkg.com/feather-icons"></script>
 
-  <link rel="stylesheet" href="/src/styles/style.css" />
-  <link rel="stylesheet" href="/src/styles/mapsstyle.css">
-  <link rel="stylesheet" href="/src/styles/kalkulatorstyle.css">
-  <link rel="stylesheet" href="/src/styles/style.css" />
-  <link rel="stylesheet" href="/src/styles/responsive.css">
+  <link rel="stylesheet" href="./src/styles/style.css" />
+  <link rel="stylesheet" href="./src/styles/responsive.css">
 </head>
-<body>
+<body onload="loadMapScenario()">
   <!-- Navbar-->
     <nav class="navbar">
-      <a href="index.html"><img src="/src/public/image/Logo.png" class="logo" alt="GreenTechify Logo" />
+      <a href="index.html"><img src="./src/public/image/Logo.png" class="logo" alt="GreenTechify Logo" />
 
       <div class="navbar-nav">
         <a href="./index.html#mapnav">Peta</a>
         <a href="./index.html#calculate">Kalkulator Karbon</a>
-        <a href="./index.html#pelaporan">Pelaporan</a>
+        <a href="./src/reports/index.php">Pelaporan</a>
         <a href="about.html">About Us</a>
       </div>
 
@@ -44,25 +42,25 @@
       <h1>Tentang Kami</h1>
       <div class="card-container">
         <div class="card">
-          <img src="/src/public/image/Syahrul-Nizam.jpg" alt="Profile Picture">
+          <img src="./src/public/image/Syahrul-Nizam.jpg" alt="Profile Picture">
           <h3>Syahrul Nizam</h3>
           <p>Ayo bergabung dengan kami untuk membuat bumi menjadi lebih sehat.</p>
         </div>
     
         <div class="card">
-          <img src="/src/public/image/Rizka-Rosalinda.png" alt="Profile Picture">
+          <img src="./src/public/image/Rizka-Rosalinda.png" alt="Profile Picture">
           <h3>Rizka Rosalinda Pratiwi</h3>
           <p>Tidak ada salahnya mencoba hal baru. Melakukan Penghijauan untuk bumi kita adalah hal yang harus kamu coba.</p>
         </div>
     
         <div class="card">
-          <img src="/src/public/image/Ismail-Marzuki.jpg" alt="Profile Picture">
+          <img src="./src/public/image/Ismail-Marzuki.jpg" alt="Profile Picture">
           <h3>Ismail Marzuki</h3>
           <p>Mari bangun Bumi kita menjadi lebih baik untuk ditinggali.</p>
         </div>
     
         <div class="card">
-          <img src="/src/public/image/Deshinta-Modeong.jpg" alt="Profile Picture">
+          <img src="./src/public/image/Deshinta-Modeong.jpg" alt="Profile Picture">
           <h3>Deshinta Modeong</h3>
           <p>Melakukan Penghijauan itu hal yang baik. Ayo kita lakukan.</p>
         </div>
@@ -84,7 +82,7 @@
         </div>
         <div class="footer-section" id="contact">
           <div class="logo-social">
-            <img src="/src/public/image/Logo.png" class="logo" alt="GreenTechify Logo" />
+            <img src="./src/public/image/Logo.png" class="logo" alt="GreenTechify Logo" />
             <h4>Mulai melaporkan penghijauan?</h4>
             <h4>Temukan Kami di Sosial Media</h4>
             <div class="social-media">
@@ -107,5 +105,11 @@
         </p>
       </div>  
     </footer>
+
+    <script>
+      feather.replace();
+    </script>
+
+    <script src="./src/scripts/index.js"></script>
 </body>
 </html>

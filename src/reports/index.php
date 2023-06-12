@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pelaporan Daerah Penghijauan</title>
-
-
+    <title>GreenTechify</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Nunito:wght@300;500&family=Podkova:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet" />
     <script src="https://www.bing.com/api/maps/mapcontrol?key=Avnu0ji1_4GO78QnO-6TuZN_vuDCUYQtyqL1QgA3hROdiQGbUn514KyTM0b5ESeb&callback=loadMapScenario" async defer></script>
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/responsive.css" />
+
     <style>
-    /* Gaya tampilan yang lebih menarik */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -19,7 +27,7 @@
     .container {
       max-width: 800px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 20% 10%;
       background-color: #fff;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
@@ -111,6 +119,21 @@
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <a href=".index.html"><img src="../public/image/Logo.png" class="logo" alt="GreenTechify Logo" />
+
+    <div class="navbar-nav">
+      <a href="#mapnav">Peta</a>
+      <a href="#calculate">Kalkulator Karbon</a>
+      <a href="#pelaporan">Pelaporan</a>
+      <a href="about.html">About Us</a>
+    </div>
+
+    <div class="navbar-extra">
+      <a id="hamburger-menu"><i data-feather="menu"></i></a>
+    </div>
+  </nav>
+
   <div class="container">
     <h2>Pelaporan Daerah Penghijauan</h2>
     <form id="reportForm" onsubmit="submitForm(event)">
@@ -141,6 +164,44 @@
 
     <div id="reportedData"></div>
   </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Content Utama</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+          <li><a href="#mapnav">Peta Penghijauan</a></li>
+          <li><a href="#calculate">Kalkulator Karbon</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-section" id="contact">
+        <div class="logo-social">
+          <img src="../public/image/Logo.png" class="logo" alt="GreenTechify Logo" />
+          <h4>Mulai melaporkan penghijauan?</h4>
+          <h4>Temukan Kami di Sosial Media</h4>
+          <div class="social-media">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Informasi Kontak</h4>
+        <p>Email: info@greentechify.com</p>
+        <p>Telepon: +62xxx</p>
+        <p>Alamat: Jl. Xxx No.X</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>
+        copyright © 2023 <a href="#">GreenTechify</a>
+      </p>
+    </div>  
+  </footer>
 
   <script src="https://www.bing.com/api/maps/mapcontrol?key=Avnu0ji1_4GO78QnO-6TuZN_vuDCUYQtyqL1QgA3hROdiQGbUn514KyTM0b5ESeb&callback=loadMapScenario" async defer></script>
   <script>
@@ -296,5 +357,11 @@
     // Memuat data yang diinputkan saat halaman pertama kali dimuat
     fetchReportedData();
   </script>
+
+  <script>
+    feather.replace();
+  </script>
+
+  <script src="../scripts/index.js"></script>
 </body>
 </html>

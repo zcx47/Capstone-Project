@@ -17,16 +17,16 @@
 
     <script src="https://unpkg.com/feather-icons"></script>
 
-    <link rel="stylesheet" href="/src/styles/style.css" />
-    <link rel="stylesheet" href="/src/styles/mapsstyle.css">
-    <link rel="stylesheet" href="/src/styles/kalkulatorstyle.css">
-    <link rel="stylesheet" href="/src/styles/responsive.css">
-    <link rel="stylesheet" href="/src/styles/reports.css">
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="./src/styles/mapsstyle.css">
+    <link rel="stylesheet" href="./src/styles/kalkulatorstyle.css">
+    <link rel="stylesheet" href="./src/styles/responsive.css">
+    <link rel="stylesheet" href="./src/styles/reports.css">
   </head>
   <body onload="loadMapScenario()">
     <!-- Navbar-->
     <nav class="navbar">
-      <a href="#home"><img src="/src/public/image/Logo.png" class="logo" alt="GreenTechify Logo" />
+      <a href="#home"><img src="./src/public/image/Logo.png" class="logo" alt="GreenTechify Logo" />
 
       <div class="navbar-nav">
         <a href="#mapnav">Peta</a>
@@ -48,7 +48,7 @@
         <a href="#" class="btn">Tertarik?</a>
       </main>
       <div class="images-1">
-          <img src="/src/public/image/img2.png" class="lead1" alt="" />
+          <img src="./src/public/image/img2.png" class="lead1" alt="" />
         </div>
     </section>
 
@@ -59,7 +59,7 @@
         <p>Pohon memiliki peran vital dalam menjaga keseimbangan ekosistem. Mereka berfungsi sebagai produsen utama yang mengubah karbon dioksida menjadi oksigen melalui proses fotosintesis. Oksigen yang dihasilkan oleh pohon sangat penting bagi kelangsungan hidup makhluk hidup lainnya, termasuk manusia. Selain itu, pohon juga menyediakan habitat bagi berbagai spesies tumbuhan dan hewan, serta menyimpan keanekaragaman hayati yang kaya.</p>
       </div>
       <div class="images-2">
-        <img src="/src/public/image/content.png" alt="">
+        <img src="./src/public/image/content.png" alt="">
       </div>
     </section>
 
@@ -76,15 +76,15 @@
       <main class="calculator"></main>
       <h1>Kalkulator Emisi Karbon</h1>
       <div class="clc">
-        <img src="/src/public/image/Calculator.png" alt="">
+        <img src="./src/public/image/Calculator.png" alt="">
       </div>
-      <label for="electricity"><img src="/src/public/image/electric.png" alt=""></i>Pemakaian Listrik (KWh)</label>
+      <label for="electricity"><img src="./src/public/image/electric.png" alt=""></i>Pemakaian Listrik (KWh)</label>
       <input type="number" id="electricity" name="electricity">
 
-      <label for="gasoline"><img src="/src/public/image/fuel.png" alt="">Pemakaian Bensin (Liter)</label>
+      <label for="gasoline"><img src="./src/public/image/fuel.png" alt="">Pemakaian Bensin (Liter)</label>
       <input type="number" id="gasoline" name="gasoline">
 
-      <label for="diesel"><img src="/src/public/image/oil.png" alt=""> Pemakaian Solar (Liter)</label>
+      <label for="diesel"><img src="./src/public/image/oil.png" alt=""> Pemakaian Solar (Liter)</label>
       <input type="number" id="diesel" name="diesel">
 
       <button type="button" id="calculate-button">Hitung Jejak Karbon</button>
@@ -96,8 +96,8 @@
     <section class="report" id="pelaporan">
       <h1>Pelaporan Lokasi Penghijauan</h1>
       <h3>"Bergabunglah dengan kami dalam menjaga lingkungan Indonesia! <br>Laporkan lokasi yang membutuhkan penghijauan dan bersama-sama <br> kita bisa menciptakan daerah yang lebih hijau dan sejuk." </h3>
-      <div class="leaf"><img src="/src/public/image/image1.png" alt=""></div>
-      <div class="leaf2"><img src="/src/public/image/image2.png" alt=""></div>
+      <div class="leaf"><img src="./src/public/image/image1.png" alt=""></div>
+      <div class="leaf2"><img src="./src/public/image/image2.png" alt=""></div>
       <button type="button" id=""><a href="./src/reports/index.php">Mulai Melaporkan</a></button>
     </section>
 
@@ -116,7 +116,7 @@
         </div>
         <div class="footer-section" id="contact">
           <div class="logo-social">
-            <img src="/src/public/image/Logo.png" class="logo" alt="GreenTechify Logo" />
+            <img src="./src/public/image/Logo.png" class="logo" alt="GreenTechify Logo" />
             <h4>Mulai melaporkan penghijauan?</h4>
             <h4>Temukan Kami di Sosial Media</h4>
             <div class="social-media">
@@ -140,13 +140,12 @@
       </div>  
     </footer>
     
-
     <script>
       feather.replace();
     </script>
 
-    <script src="/src/scripts/index.js"></script>
-    <script src="/src/scripts/maps.js"></script>
-    <script src="/src/scripts/kalkulator.js"></script>
+    <script src="./src/scripts/index.js"></script>
+    <script src="./src/scripts/maps.js"></script>
+    <script src="./src/scripts/kalkulator.js"></script>
   </body>
 </html>
