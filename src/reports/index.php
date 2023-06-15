@@ -27,7 +27,7 @@
     .container {
       max-width: 800px;
       margin: 0 auto;
-      padding: 20% 10%;
+      padding: 10%;
       background-color: #fff;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
@@ -36,12 +36,14 @@
       margin-bottom: 20px;
       text-align: center;
       color: #333;
+      font-size: large;
     }
 
     label {
       display: block;
       margin-bottom: 5px;
       color: #333;
+      font-size: small;
     }
 
     input[type="text"],
@@ -116,24 +118,21 @@
     #reportedData h3 {
       margin-bottom: 20px;
     }
+
+    @media (max-width: 758px){
+      .container {
+        padding: 15% 10%;
+      }
+    }
+
+    @media (max-width: 480px){
+      .container {
+        padding: 20% 10%;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <a href=".index.html"><img src="../public/image/Logo.png" class="logo" alt="GreenTechify Logo" />
-
-    <div class="navbar-nav">
-      <a href="#mapnav">Peta</a>
-      <a href="#calculate">Kalkulator Karbon</a>
-      <a href="#pelaporan">Pelaporan</a>
-      <a href="about.html">About Us</a>
-    </div>
-
-    <div class="navbar-extra">
-      <a id="hamburger-menu"><i data-feather="menu"></i></a>
-    </div>
-  </nav>
-
   <div class="container">
     <h2>Pelaporan Daerah Penghijauan</h2>
     <form id="reportForm" onsubmit="submitForm(event)">
@@ -166,36 +165,6 @@
   </div>
 
   <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>Content Utama</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="about.html">Tentang Kami</a></li>
-          <li><a href="#mapnav">Peta Penghijauan</a></li>
-          <li><a href="#calculate">Kalkulator Karbon</a></li>
-          <li><a href="#contact">Kontak</a></li>
-        </ul>
-      </div>
-      <div class="footer-section" id="contact">
-        <div class="logo-social">
-          <img src="../public/image/Logo.png" class="logo" alt="GreenTechify Logo" />
-          <h4>Mulai melaporkan penghijauan?</h4>
-          <h4>Temukan Kami di Sosial Media</h4>
-          <div class="social-media">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h4>Informasi Kontak</h4>
-        <p>Email: info@greentechify.com</p>
-        <p>Telepon: +62xxx</p>
-        <p>Alamat: Jl. Xxx No.X</p>
-      </div>
-    </div>
     <div class="copyright">
       <p>
         copyright © 2023 <a href="#">GreenTechify</a>

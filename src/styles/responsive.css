@@ -8,7 +8,7 @@
 }
 
 /* Tablet */
-@media (max-width: 758px) {
+@media (max-width: 834px) {
   html {
     font-size: 62.5%;
   }
@@ -248,6 +248,7 @@
   /* Kalkulator Section */
   .calculators {
     margin: 10px;
+    padding-top: 20%;
   }
   .clc img {
     right: 10rem;
@@ -270,5 +271,9 @@
 
   .logo-social {
     margin-bottom: 25px;
+  }
+
+  .about {
+    padding: 20% 0;
   }
 }

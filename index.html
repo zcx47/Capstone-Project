@@ -98,7 +98,7 @@
       <h3>"Bergabunglah dengan kami dalam menjaga lingkungan Indonesia! <br>Laporkan lokasi yang membutuhkan penghijauan dan bersama-sama <br> kita bisa menciptakan daerah yang lebih hijau dan sejuk." </h3>
       <div class="leaf"><img src="./src/public/image/image1.png" alt=""></div>
       <div class="leaf2"><img src="./src/public/image/image2.png" alt=""></div>
-      <button type="button" id=""><a href="./src/reports/index.php">Mulai Melaporkan</a></button>
+      <button type="button" id="reportButton"><a href="./src/reports/index.php" target="_blank">Mulai Melaporkan</a></button>
     </section>
 
     <!-- Footer Section -->
@@ -142,6 +142,12 @@
     
     <script>
       feather.replace();
+    </script>
+
+    <script>
+      document.getElementById('reportButton').addEventListener('click', function() {
+        window.open(this.querySelector('a').href, '_blank');
+      });
     </script>
 
     <script src="./src/scripts/index.js"></script>
