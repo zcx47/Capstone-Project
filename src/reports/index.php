@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenTechify</title>
     
+    <link rel="shortcut icon" type="image/png" href="../public/icon.png" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +29,7 @@
     .container {
       max-width: 800px;
       margin: 0 auto;
-      padding: 20% 10%;
+      padding: 10%;
       background-color: #fff;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
@@ -36,12 +38,14 @@
       margin-bottom: 20px;
       text-align: center;
       color: #333;
+      font-size: large;
     }
 
     label {
       display: block;
       margin-bottom: 5px;
       color: #333;
+      font-size: small;
     }
 
     input[type="text"],
@@ -116,24 +120,21 @@
     #reportedData h3 {
       margin-bottom: 20px;
     }
+
+    @media (max-width: 758px){
+      .container {
+        padding: 15% 10%;
+      }
+    }
+
+    @media (max-width: 480px){
+      .container {
+        padding: 20% 10%;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <a href=".index.html"><img src="../public/image/Logo.png" class="logo" alt="GreenTechify Logo" />
-
-    <div class="navbar-nav">
-      <a href="#mapnav">Peta</a>
-      <a href="#calculate">Kalkulator Karbon</a>
-      <a href="#pelaporan">Pelaporan</a>
-      <a href="about.html">About Us</a>
-    </div>
-
-    <div class="navbar-extra">
-      <a id="hamburger-menu"><i data-feather="menu"></i></a>
-    </div>
-  </nav>
-
   <div class="container">
     <h2>Pelaporan Daerah Penghijauan</h2>
     <form id="reportForm" onsubmit="submitForm(event)">
@@ -166,46 +167,16 @@
   </div>
 
   <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>Content Utama</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="about.html">Tentang Kami</a></li>
-          <li><a href="#mapnav">Peta Penghijauan</a></li>
-          <li><a href="#calculate">Kalkulator Karbon</a></li>
-          <li><a href="#contact">Kontak</a></li>
-        </ul>
-      </div>
-      <div class="footer-section" id="contact">
-        <div class="logo-social">
-          <img src="../public/image/Logo.png" class="logo" alt="GreenTechify Logo" />
-          <h4>Mulai melaporkan penghijauan?</h4>
-          <h4>Temukan Kami di Sosial Media</h4>
-          <div class="social-media">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h4>Informasi Kontak</h4>
-        <p>Email: info@greentechify.com</p>
-        <p>Telepon: +62xxx</p>
-        <p>Alamat: Jl. Xxx No.X</p>
-      </div>
-    </div>
     <div class="copyright">
       <p>
-        copyright © 2023 <a href="#">GreenTechify</a>
+        copyright © 2023 <a href="https://github.com/zcx47/GreenTechify" target="_blank">GreenTechify</a>
       </p>
     </div>  
   </footer>
 
   <script src="https://www.bing.com/api/maps/mapcontrol?key=Avnu0ji1_4GO78QnO-6TuZN_vuDCUYQtyqL1QgA3hROdiQGbUn514KyTM0b5ESeb&callback=loadMapScenario" async defer></script>
   <script>
-    var map, pushpin;
+    let map, pushpin;
 
     function loadMapScenario() {
       map = new Microsoft.Maps.Map(document.getElementById("map"), {
@@ -215,7 +186,7 @@
       });
 
       Microsoft.Maps.Events.addHandler(map, "click", function (e) {
-        var location = e.location;
+        const location = e.location;
 
         if (pushpin) {
           map.entities.remove(pushpin);
@@ -233,20 +204,16 @@
     }
 
     function submitForm(event) {
-      event.preventDefault(); // Menghentikan submit form agar tidak refresh halaman
+      event.preventDefault(); 
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const area = document.getElementById("area").value;
+      const latitude = document.getElementById("latitude").value;
+      const longitude = document.getElementById("longitude").value;
 
-      // Mendapatkan nilai dari input
-      var name = document.getElementById("name").value;
-      var email = document.getElementById("email").value;
-      var area = document.getElementById("area").value;
-      var latitude = document.getElementById("latitude").value;
-      var longitude = document.getElementById("longitude").value;
-
-      // Menampilkan loading
       showLoading();
 
-      // Mengambil data yang diinputkan
-      var data = {
+      const data = {
         name: name,
         email: email,
         area: area,
@@ -254,23 +221,18 @@
         longitude: longitude,
       };
 
-      // Mengirimkan data ke server menggunakan Ajax
-      var xhr = new XMLHttpRequest();
+      const xhr = new XMLHttpRequest();
       xhr.open("POST", "submit.php", true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
-          // Menangani respon dari server
           if (xhr.status === 200) {
-            // Laporan berhasil dikirim
             showNotification("Laporan berhasil dikirim!", true);
-            document.getElementById("reportForm").reset(); // Mengosongkan form setelah berhasil mengirim
-            fetchReportedData(); // Memperbarui data yang diinputkan
+            document.getElementById("reportForm").reset(); 
+            fetchReportedData(); 
           } else {
-            // Laporan gagal dikirim
             showNotification("Gagal mengirim laporan. Silakan coba lagi.", false);
           }
-          // Menghilangkan loading
           hideLoading();
         }
       };
@@ -278,17 +240,17 @@
     }
 
     function showLoading() {
-      var loading = document.getElementById("loading");
+      const loading = document.getElementById("loading");
       loading.style.display = "block";
     }
 
     function hideLoading() {
-      var loading = document.getElementById("loading");
+      const loading = document.getElementById("loading");
       loading.style.display = "none";
     }
 
     function showNotification(message, isSuccess) {
-      var notification = document.getElementById("notification");
+      const notification = document.getElementById("notification");
       notification.textContent = message;
       notification.classList.remove("success");
       notification.classList.remove("error");
@@ -299,18 +261,17 @@
         notification.classList.add("error");
       }
 
-      // Menghilangkan notifikasi setelah beberapa detik
       setTimeout(function () {
         notification.textContent = "";
       }, 3000);
     }
 
     function fetchReportedData() {
-      var xhr = new XMLHttpRequest();
+      const xhr = new XMLHttpRequest();
       xhr.open("GET", "fetch.php", true);
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-          var reportedData = JSON.parse(xhr.responseText);
+          const reportedData = JSON.parse(xhr.responseText);
           displayReportedData(reportedData);
         }
       };
@@ -318,28 +279,28 @@
     }
 
     function displayReportedData(reportedData) {
-      var reportedDataContainer = document.getElementById("reportedData");
+      const reportedDataContainer = document.getElementById("reportedData");
       reportedDataContainer.innerHTML = "";
 
-      if (reportedData.length > 0) {
-        var heading = document.createElement("h3");
+      if (reportedData.length > 1) {
+        const heading = document.createElement("h3");
         heading.textContent = "Data yang Dilaporkan";
         reportedDataContainer.appendChild(heading);
 
         reportedData.forEach(function (data) {
-          var name = document.createElement("p");
+          const name = document.createElement("p");
           name.textContent = "Nama: " + data.name;
 
-          var email = document.createElement("p");
+          const email = document.createElement("p");
           email.textContent = "Email: " + data.email;
 
-          var area = document.createElement("p");
+          const area = document.createElement("p");
           area.textContent = "Daerah Dilaporkan: " + data.area;
 
-          var latitude = document.createElement("p");
+          const latitude = document.createElement("p");
           latitude.textContent = "Latitude: " + data.latitude;
 
-          var longitude = document.createElement("p");
+          const longitude = document.createElement("p");
           longitude.textContent = "Longitude: " + data.longitude;
 
           reportedDataContainer.appendChild(name);
@@ -348,13 +309,12 @@
           reportedDataContainer.appendChild(latitude);
           reportedDataContainer.appendChild(longitude);
 
-          var divider = document.createElement("hr");
+          const divider = document.createElement("hr");
           reportedDataContainer.appendChild(divider);
         });
       }
     }
 
-    // Memuat data yang diinputkan saat halaman pertama kali dimuat
     fetchReportedData();
   </script>
 
@@ -363,5 +323,6 @@
   </script>
 
   <script src="../scripts/index.js"></script>
+  <script src="../scripts/maps.js"></script>
 </body>
 </html>
